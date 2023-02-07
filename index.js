@@ -1,17 +1,19 @@
-import { stringify } from "./utils.js";
+import { stringify, parse } from "./utils.js";
 import fetch from "node-fetch";
 
 export const handler = async (event) => {
-  const body = {
+  const body = parse(event.body);
+
+  const message = {
     msgtype: "text",
     text: {
-      content: `msg from github`,
+      content: `${body.issue.html_url}`,
     },
   };
 
   const response = await fetch(process.env.wechat_webhook_url, {
     method: "post",
-    body: JSON.stringify(body),
+    body: JSON.stringify(message),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -21,7 +23,7 @@ export const handler = async (event) => {
     statusCode: 200,
     body: stringify(
       {
-        data,
+        message,
       },
       null,
       2
