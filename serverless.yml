@@ -1,9 +1,9 @@
-service: github-wechat-webhook
+service: github-webchat-webhook
 frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs18.x
 
 functions:
   hook:
