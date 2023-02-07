@@ -1,0 +1,13 @@
+{
+  "name": "wechat-enterprise-github-webhook",
+  "version": "1.0.0",
+  "description": "github wechat enterprise webhook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "fancn21th <fancn21th@aliyun.com> (http://fancn21th.cn/)",
+  "license": "MIT"
+}
